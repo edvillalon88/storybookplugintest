@@ -2,7 +2,9 @@
   "name": "ProjectLibReact",
   "version": "1.0.0",
   "description": "Project react librery",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
   "author": "edvillalon88@corebooks.com",
   "license": "MIT",
   "peerDependencies": {
@@ -11,19 +13,30 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.10",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.3",
     "@storybook/addon-actions": "^6.4.13",
     "@storybook/addon-essentials": "^6.4.13",
     "@storybook/addon-links": "^6.4.13",
     "@storybook/react": "^6.4.13",
     "@types/react": "^17.0.38",
     "babel-loader": "^8.2.3",
+    "postcss": "^8.4.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rollup": "^2.64.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.31.1",
     "typescript": "^4.5.4"
   },
-  "dependencies": {},
+  "dependencies": {
+    "chart.js": "^3.7.0",
+    "react-chartjs-2": "^4.0.1"
+  },
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "rollup -c"
   }
 }
